@@ -1,0 +1,24 @@
+#projects {
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  #projects h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  #projects div {
+    margin-bottom: 1.5rem;
+  }
+  
+  #projects h3 {
+    font-size: 1.25rem;
+    color: #333;
+  }
+  
+  #projects p {
+    color: #555;
+    line-height: 1.6;
+  }
+  
