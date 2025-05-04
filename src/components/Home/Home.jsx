@@ -34,7 +34,9 @@ const Home = () => {
             <span className="highlight"> Game Dev Enthusiast</span> | 
             <span className="highlight"> UI/UX Designer</span>
           </h3>
-          <button className="hire-button">HIRE ME</button>
+          <a href="#contact">
+            <button className="hire-button">HIRE ME</button>
+          </a>
         </div>
       </div>
     </div>

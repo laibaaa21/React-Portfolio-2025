@@ -7,9 +7,14 @@
 
 .sidebar {
   background-color: #c5e1a5;
-  padding: 2rem;
-  width: 250px;
+  padding: 20px;
+  width: 180px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Center vertically */
+  align-items: center;      /* Center horizontally */
+  text-align: center;
 }
 
 .sidebar h2 {
@@ -57,7 +62,7 @@
 }
 
 .profile-img:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) rotate(5deg);
 }
 
 h1 {
