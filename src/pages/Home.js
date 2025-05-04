@@ -1,29 +1,42 @@
+// src/components/Home/Home.jsx
 import React from 'react';
-import './Home.css'; 
+import './Home.css';
+import profileImg from '../../assets/profile.jpg';
 
 const Home = () => {
   return (
-    <div className="home-body">
-      <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Explore my projects and skills</p>
-      </header>
+    <div className="home-container">
+      {/* Sidebar */}
+      <div className="sidebar">
+        <h2>Laiba Saqlain</h2>
+        <p>Email: <a href="mailto:laibasaqlain92@gmail.com">laibasaqlain92@gmail.com</a></p>
+        <p>Phone: 1902-19293737</p>
+      </div>
 
-      <section className="profile">
-        <div className="profile-img-container">
-          <img src="profile-pic.jpg" alt="Profile" className="profile-img" />
+      {/* Main Content */}
+      <div className="main-content">
+        <header className="navbar">
+          <h1>Laiba's Portfolio</h1>
+          <nav>
+            <a href="#home">Home</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </header>
+
+        <div className="hero-section">
+          <img className="profile-img" src={profileImg} alt="Laiba Saqlain" />
+          <h1>Hi, I'm <em><strong>Laiba Saqlain</strong></em></h1>
+          <h3>
+            <span className="highlight">Computer Science Student</span> | 
+            <span className="highlight"> Game Dev Enthusiast</span> | 
+            <span className="highlight"> UI/UX Designer</span>
+          </h3>
+          <button className="hire-button">HIRE ME</button>
         </div>
-        <div className="intro">
-          <h2>Hi, I'm [Your Name]</h2>
-          <p>
-            A passionate developer with an interest in web and game development.
-          </p>
-        </div>
-      </section>
-      
-      <footer>
-        <button className="hire-btn">Hire Me</button>
-      </footer>
+      </div>
     </div>
   );
 };
