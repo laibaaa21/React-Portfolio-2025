@@ -5,12 +5,12 @@ const Contact = () => {
   return (
     <section id="contact">
       <h2>Contact Me</h2>
-      <p>Email: your.email@example.com</p>
+      <p>Email: laibasaqlain92@gmail.com</p>
       <p>
-        LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">yourprofile</a>
+        LinkedIn: <a href="www.linkedin.com/in/laiba-saqlain-29b983297" target="_blank" rel="noopener noreferrer">laiba-saqlain</a>
       </p>
       <p>
-        GitHub: <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">yourusername</a>
+        GitHub: <a href="https://github.com/laibaaa21" target="_blank" rel="noopener noreferrer">laibaaa21</a>
       </p>
     </section>
   );
