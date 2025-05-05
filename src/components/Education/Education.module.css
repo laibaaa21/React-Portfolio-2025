@@ -1,0 +1,82 @@
+.educationSection {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f9f9f9;
+  color: #333;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.tableCell,
+.tableHeader {
+  padding: 12px 20px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tableHeader {
+  background-color: #3e5c36;
+  color: white;
+  font-weight: 500;
+}
+
+.tableRowEven {
+  background-color: #f0f7e6;
+}
+
+.tableRow:hover {
+  background-color: #e8f5e9;
+}
+
+.bsHighlight {
+  background-color: #c5e1a5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #3e5c36;
+}
+
+.institutionText {
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+.yearText {
+  color: #555;
+  font-style: italic;
+}
+
+.detailsText {
+  color: #333;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .educationSection {
+    padding: 2rem 1rem;
+  }
+
+  .table {
+    font-size: 0.9rem;
+  }
+
+  .tableCell,
+  .tableHeader {
+    padding: 8px 12px;
+  }
+} 
