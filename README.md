@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+# Laiba's React Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website built with React, featuring a clean UI and a component-based architecture.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Responsive Design**: Adapts seamlessly to desktop and mobile
+- **Interactive UI**: Animated skill bars, project cards with hover effects
+- **Component-Based Architecture**: Reusable components for maintainability
+- **Form Validation**: Contact form with detailed validation feedback
+- **Context API**: Dynamic page title updates
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React 18+
+- React Router DOM v6
+- CSS Modules
+- Intersection Observer API
+- Context API
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+```
+src/
+├── assets/               # Images and static assets
+├── components/
+│   ├── common/           # Reusable components
+│   │   └── Card/         # Reusable card component with CSS module
+│   ├── Contact/          # Contact section with form validation
+│   ├── Education/        # Education section with custom table
+│   ├── Footer/           # Fixed footer component
+│   ├── Home/             # Main home page with sidebar and hero section
+│   ├── Projects/         # Projects showcase using Card components
+│   └── Skills/           # Skills section with animated progress bars
+├── context/
+│   └── PageTitleContext.js # Context for dynamic page titles
+├── pages/
+│   └── HomePage.jsx      # Main page structure with all sections
+└── App.js                # Root component with providers
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation and Setup
 
-### `npm run build`
+1. Clone the repository:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/yourusername/react-portfolio.git
+cd react-portfolio
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `npm run eject`
+3. Start the development server:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Key Components
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Responsive Navigation and Sidebar
 
-## Learn More
+- Collapsible sidebar on mobile
+- Fixed navigation with smooth scrolling
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Project Showcase
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Uses reusable Card component
+- Hover animations and image zoom effects
 
-### Code Splitting
+### Education Table
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Striped rows for better readability
+- Custom styling for different content types
 
-### Analyzing the Bundle Size
+### Skills Visualization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Animated progress bars using CSS animations
+- Triggered by Intersection Observer for better performance
 
-### Making a Progressive Web App
+### Contact Form
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Client-side validation with error messages
+- Success alerts
 
-### Advanced Configuration
+## Best Practices Implemented
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **CSS Modules**: Scoped styling to avoid global CSS conflicts
+- **Context API**: Smart state management for page titles
+- **Functional Components**: Modern React patterns with hooks
+- **Responsive Design**: Mobile-first approach with media queries
+- **Component Reusability**: DRY principles with shared components
+- **Accessibility**: Semantic HTML elements and proper ARIA attributes
 
-### Deployment
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The site is deployed and can be viewed at: [https://laiba-portfolio.netlify.app](https://laiba-portfolio.netlify.app)
 
-### `npm run build` fails to minify
+## Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Desktop View](screenshots/desktop.png)
+![Mobile View](screenshots/mobile.png)
+![Contact Form](screenshots/contact-form.png)
+
+## License
+
+This project is open-source and available under the MIT License.
