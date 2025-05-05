@@ -1,6 +1,7 @@
 #contact {
   padding: 4rem 2rem;
   background-color: #ffffff;
+  position: relative;
 }
 
 .contact-container {
@@ -66,6 +67,22 @@
   outline: none;
 }
 
+.input-error {
+  border-color: #d32f2f;
+}
+
+.input-error:focus {
+  box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.2);
+  border-color: #d32f2f;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  font-weight: 500;
+}
+
 .form-input::placeholder,
 .form-textarea::placeholder {
   color: #999;
@@ -103,5 +120,62 @@
   transform: scale(0.98);
 }
 
-/* Remove the mobile responsive styles for margin if they exist */
+.form-alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1rem;
+  border-radius: 6px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 400px;
+  animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.success {
+  background-color: #43a047;
+  color: white;
+  box-shadow: 0 4px 12px rgba(67, 160, 71, 0.2);
+}
+
+.close-alert {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.close-alert:hover {
+  opacity: 1;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  #contact {
+    padding: 2rem 1rem;
+  }
+  
+  .form-alert {
+    left: 20px;
+    right: 20px;
+    max-width: calc(100% - 40px);
+  }
+}
   
