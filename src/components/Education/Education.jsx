@@ -1,21 +1,40 @@
 import React from 'react';
+import './Education.css';
 
 const Education = () => {
   return (
-    <section id="education" className="p-8 bg-gray-100 rounded-xl shadow-md mt-8">
-      <h2 className="text-2xl font-bold mb-4 text-blue-600">Education</h2>
-      <div className="space-y-4">
-        <div>
-          <h3 className="text-xl font-semibold">BS Computer Science</h3>
-          <p className="text-sm text-gray-700">Information Technology University (ITU), Lahore</p>
-          <p className="text-sm text-gray-600">Expected Graduation: 2027</p>
-        </div>
-        <div>
-          <h3 className="text-xl font-semibold">A-levels</h3>
-          <p className="text-sm text-gray-700">Lahore Grammar School</p>
-          <p className="text-sm text-gray-600">2021 – 2023</p>
-        </div>
-      </div>
+    <section id="education" className="p-8">
+      <h2 className="education-heading">Education Background</h2>
+      <table className="education-table">
+        <thead>
+          <tr>
+            <th>Degree</th>
+            <th>Institution</th>
+            <th>Year</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span className="bs-highlight">BS</span> Computer Science</td>
+            <td className="institution-text">Information Technology University</td>
+            <td className="year-text">2022 - Present</td>
+            <td className="details-text">Current CGPA: 3.4</td>
+          </tr>
+          <tr>
+            <td>A-Levels</td>
+            <td className="institution-text">Lahore Grammar School</td>
+            <td className="year-text">2020 - 2022</td>
+            <td className="details-text">Math (A), Physics (B), IT (B)</td>
+          </tr>
+          <tr>
+            <td>O-Levels</td>
+            <td className="institution-text">AES</td>
+            <td className="year-text">2018 - 2020</td>
+            <td className="details-text">Grades: 7A*, 1A</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   );
 };
