@@ -5,6 +5,7 @@ import profileImg from '../../assets/profile.jpg';
 
 const Home = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -13,6 +14,7 @@ const Home = () => {
       setIsMobile(mobile);
       if (!mobile) {
         setIsSidebarOpen(true);
+        setIsNavOpen(false);
       }
     };
 
@@ -43,12 +45,20 @@ const Home = () => {
       <div className="main-content">
         <header className="navbar">
           <h1>Laiba's Portfolio</h1>
-          <nav>
-            <a href="#home">Home</a>
-            <a href="#education">Education</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+          {isMobile && (
+            <button 
+              className="nav-toggle"
+              onClick={() => setIsNavOpen(!isNavOpen)}
+            >
+              {isNavOpen ? '×' : '☰'}
+            </button>
+          )}
+          <nav className={`nav-menu ${isNavOpen ? 'open' : ''}`}>
+            <a href="#home" onClick={() => isMobile && setIsNavOpen(false)}>Home</a>
+            <a href="#education" onClick={() => isMobile && setIsNavOpen(false)}>Education</a>
+            <a href="#projects" onClick={() => isMobile && setIsNavOpen(false)}>Projects</a>
+            <a href="#skills" onClick={() => isMobile && setIsNavOpen(false)}>Skills</a>
+            <a href="#contact" onClick={() => isMobile && setIsNavOpen(false)}>Contact</a>
           </nav>
         </header>
 
