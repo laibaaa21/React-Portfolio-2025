@@ -98,16 +98,6 @@ npm start
 - **Component Reusability**: DRY principles with shared components
 - **Accessibility**: Semantic HTML elements and proper ARIA attributes
 
-## Deployment
-
-The site is deployed and can be viewed at: [https://laiba-portfolio.netlify.app](https://laiba-portfolio.netlify.app)
-
-## Screenshots
-
-![Desktop View](screenshots/desktop.png)
-![Mobile View](screenshots/mobile.png)
-![Contact Form](screenshots/contact-form.png)
-
 ## License
 
 This project is open-source and available under the MIT License.
