@@ -1,24 +1,84 @@
 #contact {
-    padding: 2rem;
-    background-color: #fafafa;
-  }
-  
-  #contact h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  #contact p {
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
-  
-  #contact a {
-    color: #0077cc;
-    text-decoration: none;
-  }
-  
-  #contact a:hover {
-    text-decoration: underline;
-  }
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #b8d8ba;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: white;
+  font-family: 'Playfair Display', serif;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #666;
+  font-style: normal;
+  font-family: 'Playfair Display', serif;
+}
+
+.form-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submit-button {
+  background-color: #2e7d32;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.submit-button:hover {
+  background-color: #1b5e20;
+}
   
