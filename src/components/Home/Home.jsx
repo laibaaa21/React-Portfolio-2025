@@ -1,13 +1,39 @@
 // src/components/Home/Home.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
 import profileImg from '../../assets/profile.jpg';
 
 const Home = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      if (!mobile) {
+        setIsSidebarOpen(true);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="home-container">
+      {/* Mobile Toggle Button */}
+      {isMobile && (
+        <button 
+          className="sidebar-toggle"
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        >
+          {isSidebarOpen ? '×' : '☰'}
+        </button>
+      )}
+
       {/* Sidebar */}
-      <div className="sidebar">
+      <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
         <h2>Laiba Saqlain</h2>
         <p>Email: <a href="mailto:laibasaqlain92@gmail.com">laibasaqlain92@gmail.com</a></p>
         <p>Phone: 1902-19293737</p>
