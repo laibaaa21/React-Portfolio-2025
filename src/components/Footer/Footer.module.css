@@ -4,10 +4,15 @@
   text-align: center;
   padding: 1rem;
   position: fixed;
-  bottom: 0;
+  bottom: -100px; /* Start hidden below the viewport */
   left: 0;
   width: 100%;
   z-index: 100;
+  transition: bottom 0.5s ease; /* Add smooth transition */
+}
+
+.footerVisible {
+  bottom: 0; /* Show footer when this class is added */
 }
 
 .footerContent {
@@ -34,5 +39,14 @@
   .footerContent {
     flex-direction: column;
     gap: 0.5rem;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    bottom: -100px;
+  }
+  to {
+    bottom: 0;
   }
 } 
