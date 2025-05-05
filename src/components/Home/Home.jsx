@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
 import profileImg from '../../assets/profile.jpg';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 const Home = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -22,8 +23,21 @@ const Home = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    if (isMobile) {
+      setIsNavOpen(false);
+    }
+  };
+
   return (
     <div className="home-container">
+      {/* Theme Toggle */}
+      <ThemeToggle />
+      
       {/* Mobile Toggle Button */}
       {isMobile && (
         <button 
@@ -54,7 +68,7 @@ const Home = () => {
             </button>
           )}
           <nav className={`nav-menu ${isNavOpen ? 'open' : ''}`}>
-            <a href="#home" onClick={() => isMobile && setIsNavOpen(false)}>Home</a>
+            <a href="#" onClick={scrollToTop}>Home</a>
             <a href="#education" onClick={() => isMobile && setIsNavOpen(false)}>Education</a>
             <a href="#projects" onClick={() => isMobile && setIsNavOpen(false)}>Projects</a>
             <a href="#skills" onClick={() => isMobile && setIsNavOpen(false)}>Skills</a>

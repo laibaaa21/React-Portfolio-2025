@@ -4,6 +4,8 @@
   width: calc(100% - 250px); /* Full width minus sidebar width */
   margin-left: 250px; /* Match sidebar width */
   position: relative;
+  background-color: var(--background-color);
+  transition: background-color 0.3s ease;
 }
 
 /* Mobile Responsive Styles */

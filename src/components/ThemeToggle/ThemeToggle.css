@@ -1,0 +1,86 @@
+.theme-toggle-container {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+}
+
+.theme-toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 26px;
+  outline: none;
+}
+
+.toggle-track {
+  background-color: #3e5c36;
+  border-radius: 30px;
+  width: 50px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  padding: 0 3px;
+  position: relative;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease;
+}
+
+[data-theme='dark'] .toggle-track {
+  background-color: #555;
+}
+
+.toggle-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-thumb.light {
+  transform: translateX(0);
+  background-color: #FFD700;
+}
+
+.toggle-thumb.dark {
+  transform: translateX(24px);
+  background-color: #2c3e50;
+}
+
+.sun-icon, .moon-icon {
+  width: 16px;
+  height: 16px;
+  color: #555;
+}
+
+.moon-icon {
+  color: #f1c40f;
+}
+
+/* Add a subtle glow effect */
+.toggle-thumb.light {
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
+.toggle-thumb.dark {
+  box-shadow: 0 0 8px rgba(44, 62, 80, 0.6);
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .theme-toggle-container {
+    top: 15px;
+    left: 60px; /* Position next to mobile sidebar toggle */
+  }
+} 

@@ -1,68 +1,78 @@
 #education {
   padding: 4rem 2rem;
-  background-color: #ffffff;
+  background-color: var(--background-color);
   max-width: 1200px;
   margin: 0 auto;
+  transition: background-color 0.3s ease;
 }
 
 .education-heading {
   font-size: 2rem;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 2rem;
   text-align: center;
+  transition: color 0.3s ease;
 }
 
 .education-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: var(--card-background);
+  color: var(--text-color);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 10px var(--shadow-color);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .education-table th,
 .education-table td {
   padding: 12px 20px;
   text-align: left;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--border-color);
+  transition: border-color 0.3s ease;
 }
 
 .education-table th {
-  background-color: #3e5c36;
+  background-color: var(--primary-color);
   color: white;
   font-weight: 500;
+  transition: background-color 0.3s ease;
 }
 
 .education-table tr:nth-child(even) {
-  background-color: #f0f7e6;
+  background-color: var(--hover-color);
+  transition: background-color 0.3s ease;
 }
 
 .education-table tr:hover {
-  background-color: #e8f5e9;
+  background-color: var(--hover-color);
 }
 
 .bs-highlight {
-  background-color: #c5e1a5;
+  background-color: var(--secondary-color);
   padding: 2px 6px;
   border-radius: 4px;
   font-weight: 600;
-  color: #3e5c36;
+  color: var(--primary-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .institution-text {
-  color: #2e7d32;
+  color: var(--highlight-color);
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .year-text {
-  color: #555;
+  color: var(--secondary-text-color);
   font-style: italic;
+  transition: color 0.3s ease;
 }
 
 .details-text {
-  color: #333;
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 /* Mobile Responsive Styles */

@@ -1,28 +1,31 @@
 #contact {
   padding: 4rem 2rem;
-  background-color: #ffffff;
+  background-color: var(--background-color);
   position: relative;
+  transition: background-color 0.3s ease;
 }
 
 .contact-container {
   max-width: 500px;
   margin: 0 auto;
-  background-color: #b8d8ba;
+  background-color: var(--secondary-color);
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 10px var(--shadow-color);
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-heading {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
-  color: #1a1a1a;
+  color: var(--text-color);
   margin-bottom: 1.5rem;
   text-align: center;
   font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 .contact-form {
@@ -43,26 +46,28 @@
 .form-label {
   font-family: 'Playfair Display', serif;
   font-size: 0.9rem;
-  color: #1a1a1a;
+  color: var(--text-color);
   font-weight: 500;
   text-align: left;
+  transition: color 0.3s ease;
 }
 
 .form-input,
 .form-textarea {
   width: 100%;
   padding: 0.7rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 6px;
   font-size: 0.9rem;
-  background-color: white;
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-family: 'Playfair Display', serif;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.3s, color 0.3s;
 }
 
 .form-input:focus,
 .form-textarea:focus {
-  border-color: #2e7d32;
+  border-color: var(--highlight-color);
   box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
   outline: none;
 }
@@ -85,7 +90,7 @@
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: #999;
+  color: var(--secondary-text-color);
   font-style: normal;
   font-family: 'Playfair Display', serif;
   font-size: 0.85rem;
@@ -97,14 +102,14 @@
 }
 
 .submit-button {
-  background-color: #2e7d32;
+  background-color: var(--highlight-color);
   color: white;
   padding: 0.7rem 1.5rem;
   border: none;
   border-radius: 6px;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
+  transition: background-color 0.3s, transform 0.1s;
   align-self: center;
   font-family: 'Playfair Display', serif;
   font-weight: 500;
@@ -113,7 +118,7 @@
 }
 
 .submit-button:hover {
-  background-color: #1b5e20;
+  background-color: var(--primary-color);
 }
 
 .submit-button:active {

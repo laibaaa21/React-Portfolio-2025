@@ -1,9 +1,9 @@
 .card {
-  background: white;
+  background: var(--card-background);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px var(--shadow-color);
 }
 
 .imageContainer {
@@ -41,16 +41,18 @@
 
 .title {
   font-size: 1.25rem;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 0.75rem;
   font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 .description {
   font-size: 0.9rem;
-  color: #555;
+  color: var(--secondary-text-color);
   line-height: 1.5;
   flex: 1;
+  transition: color 0.3s ease;
 }
 
 /* Mobile Responsive Styles */

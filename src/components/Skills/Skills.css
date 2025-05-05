@@ -1,11 +1,14 @@
 #skills {
     padding: 4rem 2rem;
-    background-color: #ffffff;
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease;
   }
   
   #skills h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: var(--text-color);
+    transition: color 0.3s ease;
   }
   
   #skills ul {
@@ -15,14 +18,16 @@
   
   #skills li {
     margin-bottom: 0.5rem;
-    color: #444;
+    color: var(--secondary-text-color);
+    transition: color 0.3s ease;
   }
   
   .skills-heading {
     font-size: 2rem;
-    color: #333;
+    color: var(--text-color);
     margin-bottom: 3rem;
     text-align: center;
+    transition: color 0.3s ease;
   }
   
   .skills-container {
@@ -36,31 +41,33 @@
   
   .skill-name {
     font-size: 1.1rem;
-    color: #333;
+    color: var(--text-color);
     margin-bottom: 0.5rem;
     font-weight: 500;
+    transition: color 0.3s ease;
   }
   
   .skill-bar-container {
     width: 100%;
     height: 25px;
-    background-color: #e0e0e0;
+    background-color: var(--card-background);
     border-radius: 12px;
     overflow: hidden;
     position: relative;
+    transition: background-color 0.3s ease;
   }
   
   .skill-bar {
     height: 100%;
     background: repeating-linear-gradient(
       45deg,
-      #4CAF50,
-      #4CAF50 10px,
-      #45a049 10px,
-      #45a049 20px
+      var(--highlight-color),
+      var(--highlight-color) 10px,
+      var(--primary-color) 10px,
+      var(--primary-color) 20px
     );
     width: 0;
-    transition: width 1.5s ease-in-out;
+    transition: width 1.5s ease-in-out, background 0.3s ease;
     border-radius: 12px;
   }
   
@@ -73,9 +80,10 @@
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    color: #333;
+    color: var(--text-color);
     font-weight: 500;
     font-size: 0.9rem;
+    transition: color 0.3s ease;
   }
   
   @keyframes fillBar {
