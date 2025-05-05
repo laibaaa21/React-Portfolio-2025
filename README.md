@@ -77,37 +77,37 @@ npm start
 - Uses reusable Card component
 - Hover animations and image zoom effects
 
-![Card Hover effect](assets/3.gif)
+![Card Hover effect](src/assets/3.gif)
 
 ### Education Table
 
 - Striped rows for better readability
 - Custom styling for different content types
-  ![Table](assets/4.jpg)
+  ![Table](src/assets/4.jpg)
 
 ### Skills Visualization
 
 - Animated progress bars using CSS animations
 - Triggered by Intersection Observer for better performance
-  ![Skills bar](assets/5.gif)
+  ![Skills bar](src/assets/5.gif)
 
 ### Contact Form
 
 - Client-side validation with error messages
 - Success alerts
-  ![Form](assets/6.jpg)
+  ![Form](src/assets/6.jpg)
 
 ### Footer
 
 - Footer with name
 - Appears when scrolled down
-  ![Footer](assets/7.jpg)
+  ![Footer](src/assets/7.jpg)
 
 ### Light/Dark Mode
 
 - toggles light/dark mode
-  ![Light Mode](assets/8.jpg)
-  ![Dark Mode](assets/9.jpg)
+  ![Light Mode](src/assets/8.jpg)
+  ![Dark Mode](src/assets/9.jpg)
 
 ## Best Practices Implemented
 
