@@ -17,6 +17,11 @@
   align-items: center;
   text-align: center;
   transition: transform 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 99;
 }
 
 .sidebar h2 {
@@ -32,6 +37,7 @@
   flex: 1;
   padding: 0;
   background-color: #fff;
+  margin-left: 250px; /* Match sidebar width */
 }
 
 .navbar {
@@ -41,7 +47,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 250px; /* Match sidebar width */
+  z-index: 98;
 }
 
 .navbar h1 {
@@ -69,6 +79,7 @@
 .hero-section {
   text-align: center;
   padding: 3rem;
+  margin-top: 60px; /* Add margin to account for fixed navbar */
 }
 
 .profile-img {
@@ -153,11 +164,6 @@ h3 {
   }
 
   .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    z-index: 999;
     transform: translateX(-100%);
   }
 
@@ -174,7 +180,9 @@ h3 {
   }
 
   .navbar {
-    padding: 1rem;
+    position: fixed;
+    left: 0;
+    right: 0;
   }
 
   .nav-menu {
@@ -199,5 +207,9 @@ h3 {
     font-size: 1.2rem;
     width: 100%;
     text-align: center;
+  }
+
+  .hero-section {
+    margin-top: 80px; /* Increase margin for mobile navbar */
   }
 }
