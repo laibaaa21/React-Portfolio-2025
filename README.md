@@ -69,25 +69,45 @@ npm start
 - Collapsible sidebar on mobile
 - Fixed navigation with smooth scrolling
 
+![Desktop View](assets/1.jpg)
+![Mobile View](assets/2.jpg)
+
 ### Project Showcase
 
 - Uses reusable Card component
 - Hover animations and image zoom effects
 
+![Card Hover effect](assets/3.gif)
+
 ### Education Table
 
 - Striped rows for better readability
 - Custom styling for different content types
+  ![Table](assets/4.jpg)
 
 ### Skills Visualization
 
 - Animated progress bars using CSS animations
 - Triggered by Intersection Observer for better performance
+  ![Skills bar](assets/5.gif)
 
 ### Contact Form
 
 - Client-side validation with error messages
 - Success alerts
+  ![Form](assets/6.jpg)
+
+### Footer
+
+- Footer with name
+- Appears when scrolled down
+  ![Footer](assets/7.jpg)
+
+### Light/Dark Mode
+
+- toggles light/dark mode
+  ![Light Mode](assets/8.jpg)
+  ![Dark Mode](assets/9.jpg)
 
 ## Best Practices Implemented
 
