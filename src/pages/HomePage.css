@@ -1,0 +1,15 @@
+/* HomePage.css */
+.content-sections {
+  /* This wrapper ensures proper layout with the sidebar */
+  width: calc(100% - 250px); /* Full width minus sidebar width */
+  margin-left: 250px; /* Match sidebar width */
+  position: relative;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .content-sections {
+    width: 100%;
+    margin-left: 0;
+  }
+} 

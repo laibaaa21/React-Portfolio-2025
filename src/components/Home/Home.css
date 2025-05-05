@@ -9,7 +9,7 @@
 .sidebar {
   background-color: #c5e1a5;
   padding: 20px;
-  width: 250px;
+  width: 220px;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,8 @@
   flex: 1;
   padding: 0;
   background-color: #fff;
-  margin-left: 250px; /* Match sidebar width */
+  margin-left: 250px; /* Always offset for sidebar on desktop */
+  min-width: 0;
 }
 
 .navbar {

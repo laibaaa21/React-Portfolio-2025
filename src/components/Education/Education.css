@@ -38,25 +38,6 @@
   background-color: #2a2a2a;
 }
 
-.bs-highlight {
-  color: #ffd700;
-}
-
-.grade-text {
-  color: #00ff00;
-}
-
-.year-text {
-  color: #ffffff;
-}
-
-.details-text {
-  color: #00ff00;
-}
-
-.institution-text {
-  color: #00bfff;
-}
 
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {

@@ -14,17 +14,17 @@
   
   #projects h3 {
     font-size: 1.25rem;
-    color: #333;
+    color: #000000;
   }
   
   #projects p {
-    color: #555;
+    color: #000000;
     line-height: 1.6;
   }
   
   .projects-heading {
     font-size: 2rem;
-    color: #333;
+    color: #000000;
     margin-bottom: 2rem;
     text-align: center;
   }
@@ -71,13 +71,15 @@
   
   .project-title {
     font-size: 1.25rem;
-    color: #333;
+    color: #000000;
     margin-bottom: 0.5rem;
   }
   
   .project-description {
-    color: #666;
+    color: #000000;
     font-size: 0.9rem;
     line-height: 1.5;
   }
+  
+  /* Remove redundant mobile styles */
   

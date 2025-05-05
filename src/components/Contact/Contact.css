@@ -81,4 +81,6 @@
 .submit-button:hover {
   background-color: #1b5e20;
 }
+
+/* Remove the mobile responsive styles for margin if they exist */
   
