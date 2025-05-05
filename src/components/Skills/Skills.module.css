@@ -1,0 +1,80 @@
+.skillsSection {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+}
+
+.heading {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.skillItem {
+  margin-bottom: 2rem;
+}
+
+.skillName {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.barContainer {
+  width: 100%;
+  height: 25px;
+  background-color: #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar {
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    #4CAF50,
+    #4CAF50 10px,
+    #45a049 10px,
+    #45a049 20px
+  );
+  width: 0;
+  transition: width 1.5s ease-in-out;
+  border-radius: 12px;
+}
+
+.bar.animate {
+  animation: fillBar 1.5s ease-in-out forwards;
+}
+
+.percentage {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #333;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--skill-percentage);
+  }
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .skillsSection {
+    padding: 2rem 1rem;
+  }
+} 

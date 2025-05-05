@@ -1,0 +1,38 @@
+.projectsSection {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.heading {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.projectsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.categories {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #444;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .projectsSection {
+    padding: 2rem 1rem;
+  }
+  
+  .projectsContainer {
+    grid-template-columns: 1fr;
+  }
+} 

@@ -1,37 +1,64 @@
-import React from 'react';
-import './Education.css';
+import React, { useEffect } from 'react';
+import { usePageTitle } from '../../context/PageTitleContext';
+import styles from './Education.module.css';
 
 const Education = () => {
+  const { updatePageTitle } = usePageTitle();
+  
+  useEffect(() => {
+    updatePageTitle('Education');
+  }, [updatePageTitle]);
+  
   return (
-    <section id="education" className="p-8">
-      <h2 className="education-heading">Education Background</h2>
-      <table className="education-table">
+    <section id="education" className={styles.educationSection}>
+      <h2 className={styles.heading}>Education Background</h2>
+      <table className={styles.table}>
         <thead>
           <tr>
-            <th>Degree</th>
-            <th>Institution</th>
-            <th>Year</th>
-            <th>Details</th>
+            <th className={styles.tableHeader}>Degree</th>
+            <th className={styles.tableHeader}>Institution</th>
+            <th className={styles.tableHeader}>Year</th>
+            <th className={styles.tableHeader}>Details</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><span className="bs-highlight">BS</span> Computer Science</td>
-            <td className="institution-text">Information Technology University</td>
-            <td className="year-text">2022 - Present</td>
-            <td className="details-text">Current CGPA: 3.4</td>
+          <tr className={styles.tableRow}>
+            <td className={styles.tableCell}>
+              <span className={styles.bsHighlight}>BS</span> Computer Science
+            </td>
+            <td className={`${styles.tableCell} ${styles.institutionText}`}>
+              Information Technology University
+            </td>
+            <td className={`${styles.tableCell} ${styles.yearText}`}>
+              2022 - Present
+            </td>
+            <td className={`${styles.tableCell} ${styles.detailsText}`}>
+              Current CGPA: 3.4
+            </td>
           </tr>
-          <tr>
-            <td>A-Levels</td>
-            <td className="institution-text">Lahore Grammar School</td>
-            <td className="year-text">2020 - 2022</td>
-            <td className="details-text">Math (A), Physics (B), IT (B)</td>
+          <tr className={`${styles.tableRow} ${styles.tableRowEven}`}>
+            <td className={styles.tableCell}>A-Levels</td>
+            <td className={`${styles.tableCell} ${styles.institutionText}`}>
+              Lahore Grammar School
+            </td>
+            <td className={`${styles.tableCell} ${styles.yearText}`}>
+              2020 - 2022
+            </td>
+            <td className={`${styles.tableCell} ${styles.detailsText}`}>
+              Math (A), Physics (B), IT (B)
+            </td>
           </tr>
-          <tr>
-            <td>O-Levels</td>
-            <td className="institution-text">AES</td>
-            <td className="year-text">2018 - 2020</td>
-            <td className="details-text">Grades: 7A*, 1A</td>
+          <tr className={styles.tableRow}>
+            <td className={styles.tableCell}>O-Levels</td>
+            <td className={`${styles.tableCell} ${styles.institutionText}`}>
+              AES
+            </td>
+            <td className={`${styles.tableCell} ${styles.yearText}`}>
+              2018 - 2020
+            </td>
+            <td className={`${styles.tableCell} ${styles.detailsText}`}>
+              Grades: 7A*, 1A
+            </td>
           </tr>
         </tbody>
       </table>

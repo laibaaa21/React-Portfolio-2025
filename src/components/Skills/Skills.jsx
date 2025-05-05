@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
-import './Skills.css';
+import { usePageTitle } from '../../context/PageTitleContext';
+import styles from './Skills.module.css';
 
 const Skills = () => {
   const skillsRef = useRef(null);
+  const { updatePageTitle } = usePageTitle();
 
   const skills = [
     { name: 'Unity', percentage: 80 },
@@ -14,12 +16,16 @@ const Skills = () => {
   ];
 
   useEffect(() => {
+    updatePageTitle('Skills');
+  }, [updatePageTitle]);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const bars = document.querySelectorAll('.skill-bar');
-            bars.forEach((bar) => bar.classList.add('animate'));
+            const bars = document.querySelectorAll(`.${styles.bar}`);
+            bars.forEach((bar) => bar.classList.add(styles.animate));
           }
         });
       },
@@ -38,18 +44,18 @@ const Skills = () => {
   }, []);
 
   return (
-    <section id="skills" ref={skillsRef}>
-      <h2 className="skills-heading">Technical Skills</h2>
-      <div className="skills-container">
+    <section id="skills" ref={skillsRef} className={styles.skillsSection}>
+      <h2 className={styles.heading}>Technical Skills</h2>
+      <div className={styles.container}>
         {skills.map((skill, index) => (
-          <div key={index} className="skill-item">
-            <div className="skill-name">{skill.name}</div>
-            <div className="skill-bar-container">
+          <div key={index} className={styles.skillItem}>
+            <div className={styles.skillName}>{skill.name}</div>
+            <div className={styles.barContainer}>
               <div
-                className="skill-bar"
+                className={styles.bar}
                 style={{ '--skill-percentage': `${skill.percentage}%` }}
               >
-                <span className="skill-percentage">{skill.percentage}%</span>
+                <span className={styles.percentage}>{skill.percentage}%</span>
               </div>
             </div>
           </div>
