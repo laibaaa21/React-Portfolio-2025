@@ -15,29 +15,55 @@
 .education-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #1a1a1a;
-  color: white;
-  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: #333;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .education-table th,
 .education-table td {
   padding: 12px 20px;
   text-align: left;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .education-table th {
-  background-color: #1a1a1a;
+  background-color: #3e5c36;
+  color: white;
   font-weight: 500;
 }
 
-.education-table tr:hover {
-  background-color: #2a2a2a;
+.education-table tr:nth-child(even) {
+  background-color: #f0f7e6;
 }
 
+.education-table tr:hover {
+  background-color: #e8f5e9;
+}
+
+.bs-highlight {
+  background-color: #c5e1a5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #3e5c36;
+}
+
+.institution-text {
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+.year-text {
+  color: #555;
+  font-style: italic;
+}
+
+.details-text {
+  color: #333;
+}
 
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
