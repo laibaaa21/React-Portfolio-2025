@@ -69,8 +69,8 @@ npm start
 - Collapsible sidebar on mobile
 - Fixed navigation with smooth scrolling
 
-![Desktop View](assets/1.jpg)
-![Mobile View](assets/2.jpg)
+![Desktop View](src/assets/1.jpg)
+![Mobile View](src/assets/2.jpg)
 
 ### Project Showcase
 
