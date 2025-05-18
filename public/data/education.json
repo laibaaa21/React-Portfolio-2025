@@ -1,0 +1,38 @@
+[
+    {
+        "_id": "1",
+        "institution": "Information Technology University",
+        "degree": "BS Computer Science",
+        "field": "Computer Science",
+        "startDate": "2022-09-01",
+        "endDate": null,
+        "current": true,
+        "description": "Studying computer science with a focus on software engineering and AI",
+        "location": "Lahore, Pakistan",
+        "gpa": "3.4"
+    },
+    {
+        "_id": "2",
+        "institution": "Lahore Grammar School",
+        "degree": "A-Levels",
+        "field": "Pre-Engineering",
+        "startDate": "2020-09-01",
+        "endDate": "2022-06-30",
+        "current": false,
+        "description": "Math (A), Physics (B), IT (B)",
+        "location": "Lahore, Pakistan",
+        "gpa": null
+    },
+    {
+        "_id": "3",
+        "institution": "AES",
+        "degree": "O-Levels",
+        "field": "General Education",
+        "startDate": "2018-09-01",
+        "endDate": "2020-06-30",
+        "current": false,
+        "description": "Grades: 7A*, 1A",
+        "location": "Lahore, Pakistan",
+        "gpa": null
+    }
+]

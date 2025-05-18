@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { usePageTitle } from '../../context/PageTitleContext';
 import { useTheme } from '../../context/ThemeContext';
 import styles from './Skills.module.css';
@@ -8,8 +8,9 @@ import useFetch from '../../hooks/useFetch';
 const Skills = () => {
   const skillsRef = useRef(null);
   const { updatePageTitle } = usePageTitle();
-  const { theme } = useTheme(); // Get current theme
-  const { data: apiSkills, loading, error } = useFetch(getAllSkills);
+  const { theme } = useTheme();
+  const [retryCount, setRetryCount] = useState(0);
+  const { data: apiSkills, loading, error, refetch } = useFetch(getAllSkills, [retryCount]);
 
   const defaultSkills = [
     { name: 'Unity', percentage: 80 },
@@ -64,6 +65,22 @@ const Skills = () => {
     }, 50);
   }, [theme]);
 
+  const handleRetry = () => {
+    setRetryCount(prevCount => prevCount + 1);
+  };
+
+  const renderError = () => (
+    <div className={styles.errorContainer}>
+      <p className={styles.error}>
+        <span className={styles.errorIcon}>⚠️</span>
+        Unable to load skills data.
+      </p>
+      <button className={styles.retryButton} onClick={handleRetry}>
+        Try Again
+      </button>
+    </div>
+  );
+
   // Convert API skills to the format needed for display
   const skills = apiSkills && apiSkills.length > 0
     ? apiSkills.map(skill => ({
@@ -77,8 +94,15 @@ const Skills = () => {
   return (
     <section id="skills" ref={skillsRef} className={`${styles.skillsSection} ${theme}-theme`}>
       <h2 className={styles.heading}>Technical Skills</h2>
-      {loading && <p className={styles.loading}>Loading skills...</p>}
-      {error && <p className={styles.error}>Error loading skills: {error}</p>}
+
+      {loading && (
+        <div className={styles.loadingContainer}>
+          <p className={styles.loading}>Loading skills data...</p>
+        </div>
+      )}
+
+      {error && renderError()}
+
       <div className={styles.container}>
         {skills.map((skill, index) => (
           <div key={index} className={styles.skillItem}>

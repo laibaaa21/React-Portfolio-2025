@@ -1,0 +1,66 @@
+[
+    {
+        "_id": "1",
+        "name": "Unity",
+        "level": "Advanced",
+        "category": "Game Dev",
+        "icon": "unity",
+        "yearsOfExperience": 3
+    },
+    {
+        "_id": "2",
+        "name": "OpenCV",
+        "level": "Intermediate",
+        "category": "Backend",
+        "icon": "opencv",
+        "yearsOfExperience": 2
+    },
+    {
+        "_id": "3",
+        "name": "Adobe Photoshop",
+        "level": "Expert",
+        "category": "Design",
+        "icon": "photoshop",
+        "yearsOfExperience": 4
+    },
+    {
+        "_id": "4",
+        "name": "Audacity",
+        "level": "Expert",
+        "category": "Other",
+        "icon": "audacity",
+        "yearsOfExperience": 3
+    },
+    {
+        "_id": "5",
+        "name": "Problem Solving",
+        "level": "Advanced",
+        "category": "Other",
+        "icon": "problem-solving",
+        "yearsOfExperience": 5
+    },
+    {
+        "_id": "6",
+        "name": "Adaptability",
+        "level": "Expert",
+        "category": "Other",
+        "icon": "adaptability",
+        "yearsOfExperience": 5
+    },
+    {
+        "_id": "7",
+        "name": "React",
+        "level": "Intermediate",
+        "category": "Frontend",
+        "icon": "react",
+        "yearsOfExperience": 2
+    },
+    {
+        "_id": "8",
+        "name": "Node.js",
+        "level": "Intermediate",
+        "category": "Backend",
+        "icon": "nodejs",
+        "yearsOfExperience": 2
+    }
+]

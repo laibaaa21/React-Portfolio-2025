@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { usePageTitle } from '../../context/PageTitleContext';
 import styles from './Education.module.css';
 import { getAllEducation } from '../../services/educationService';
@@ -6,7 +6,8 @@ import useFetch from '../../hooks/useFetch';
 
 const Education = () => {
   const { updatePageTitle } = usePageTitle();
-  const { data: education, loading, error } = useFetch(getAllEducation);
+  const [retryCount, setRetryCount] = useState(0);
+  const { data: education, loading, error, refetch } = useFetch(getAllEducation, [retryCount]);
 
   useEffect(() => {
     updatePageTitle('Education');
@@ -18,12 +19,33 @@ const Education = () => {
     return date.getFullYear();
   };
 
+  const handleRetry = () => {
+    setRetryCount(prevCount => prevCount + 1);
+  };
+
+  const renderError = () => (
+    <div className={styles.errorContainer}>
+      <p className={styles.error}>
+        <span className={styles.errorIcon}>⚠️</span>
+        Unable to load education data.
+      </p>
+      <button className={styles.retryButton} onClick={handleRetry}>
+        Try Again
+      </button>
+    </div>
+  );
+
   return (
     <section id="education" className={styles.educationSection}>
       <h2 className={styles.heading}>Education Background</h2>
 
-      {loading && <p className={styles.loading}>Loading education data...</p>}
-      {error && <p className={styles.error}>Error loading education data: {error}</p>}
+      {loading && (
+        <div className={styles.loadingContainer}>
+          <p className={styles.loading}>Loading education data...</p>
+        </div>
+      )}
+
+      {error && renderError()}
 
       {!loading && !error && education && education.length > 0 ? (
         <table className={styles.table}>

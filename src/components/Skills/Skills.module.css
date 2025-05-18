@@ -93,3 +93,92 @@
     padding: 0 1rem;
   }
 }
+
+/* Add these styles to the top of the file or in the appropriate location */
+
+.errorContainer {
+  margin: 2rem auto;
+  max-width: 500px;
+  padding: 1.5rem;
+  background-color: rgba(255, 99, 71, 0.1);
+  border-left: 4px solid tomato;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.error {
+  color: #d63031;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.errorIcon {
+  font-size: 1.5rem;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.retryButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.retryButton:hover {
+  background-color: var(--highlight-color);
+  transform: translateY(-2px);
+}
+
+.loadingContainer {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.loading {
+  display: inline-block;
+  font-size: 1rem;
+  color: var(--text-color);
+  margin: 0;
+  padding: 1rem;
+  position: relative;
+}
+
+.loading:after {
+  content: "...";
+  position: absolute;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  animation: ellipsis 2s infinite;
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  0% {
+    width: 0px;
+  }
+
+  25% {
+    width: 10px;
+  }
+
+  50% {
+    width: 20px;
+  }
+
+  75% {
+    width: 10px;
+  }
+
+  100% {
+    width: 0px;
+  }
+}
+
+/* If there are existing styles for the skills component, keep them below */
