@@ -8,9 +8,11 @@ A modern, full-stack portfolio website with a React frontend and Node.js/Express
 - **Interactive UI**: Animated skill bars, project cards with hover effects
 - **Component-Based Architecture**: Reusable components for maintainability
 - **Form Validation**: Contact form with detailed validation feedback
-- **Context API**: Dynamic page title updates
+- **Context API**: Dynamic page title updates and authentication state management
 - **REST API Integration**: Backend API for dynamic content
 - **JWT Authentication**: Secure admin access for content management
+- **Role-Based Access Control**: Admin-only protected routes
+- **Admin Dashboard**: Full content management interface
 - **MongoDB Database**: Persistent storage for all portfolio content
 
 ## Technologies Used
@@ -21,6 +23,7 @@ A modern, full-stack portfolio website with a React frontend and Node.js/Express
 - CSS Modules
 - Axios
 - Context API
+- JWT for authentication
 
 ### Backend
 - Node.js
@@ -39,9 +42,14 @@ project/
 │   ├── src/
 │   │   ├── assets/          # Images and static assets
 │   │   ├── components/      # React components
-│   │   ├── context/         # Context providers
+│   │   │   ├── Admin/       # Admin dashboard components
+│   │   │   ├── Login/       # Authentication components
+│   │   │   └── ProtectedRoute/ # Auth protection components
+│   │   ├── context/         # Context providers including AuthContext
 │   │   ├── hooks/           # Custom React hooks
 │   │   ├── pages/           # Page components
+│   │   │   ├── AdminPage/   # Admin dashboard page
+│   │   │   └── Login/       # Login page
 │   │   ├── services/        # API service modules
 │   │   └── App.js           # Root component
 │   └── package.json         # Frontend dependencies
@@ -151,6 +159,14 @@ npm run dev
     ![Light Mode](src/assets/8.jpg)
     ![Dark Mode](src/assets/9.jpg)
 
+- **Admin Dashboard**
+  - Secure login with JWT authentication
+  - Content management interface
+  - Role-based access control
+  - Protected routes for admin-only access
+  - CRUD operations for all portfolio sections
+   ![Login](src/assets/login.jpg)
+
 ### Backend API Features
 
 - **RESTful API**: Full CRUD operations for education, skills, projects, and experience
@@ -162,22 +178,40 @@ npm run dev
 
 ## Authentication
 
-The backend includes JWT-based authentication with:
-- User registration and login
-- Password hashing
-- Role-based authorization
-- Protected routes for admin operations
+The application includes comprehensive authentication and authorization features:
+- JWT-based authentication with localStorage token storage
+ ![Postman](src/assets/loginPostman.jpg)
+- User login with email and password
+- Role-based access control (admin vs regular users)
+- Protected routes with automatic redirects for unauthorized access
+- Secure password handling with bcrypt hashing
+- Logout functionality with proper token cleanup
+- Context-based authentication state management
+
+## Admin Dashboard
+
+The admin dashboard provides a complete content management interface:
+- Protected by authentication and role-based authorization
+- Comprehensive management of education entries
+- Skills management interface
+- Project portfolio management
+- Work experience management
+- User-friendly forms for content creation and editing
+- Intuitive table-based content listing
+- Convenient logout button in top-right corner
 
 ## Best Practices Implemented
 
 - **CSS Modules**: Scoped styling to avoid global CSS conflicts
-- **Context API**: Smart state management for page titles
+- **Context API**: Smart state management for page titles and authentication
 - **Functional Components**: Modern React patterns with hooks
 - **Responsive Design**: Mobile-first approach with media queries
 - **Component Reusability**: DRY principles with shared components
 - **API Service Layer**: Centralized API communication
 - **Environment Variables**: Separate configuration for development and production
 - **Input Validation**: Server-side validation for all data
+- **Secure Authentication**: JWT with proper storage and handling
+- **Protected Routes**: Route-based access control
 
 ## License
 
