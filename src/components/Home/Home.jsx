@@ -3,11 +3,13 @@ import React, { useState, useEffect } from 'react';
 import './Home.css';
 import profileImg from '../../assets/profile.jpg';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
+import { useTheme } from '../../context/ThemeContext';
 
 const Home = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const handleResize = () => {
@@ -23,6 +25,10 @@ const Home = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  useEffect(() => {
+    document.body.className = theme === 'dark' ? 'dark-theme' : 'light-theme';
+  }, [theme]);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -34,13 +40,13 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container">
+    <div className={`home-container ${theme}`}>
       {/* Theme Toggle */}
       <ThemeToggle />
-      
+
       {/* Mobile Toggle Button */}
       {isMobile && (
-        <button 
+        <button
           className="sidebar-toggle"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
@@ -60,7 +66,7 @@ const Home = () => {
         <header className="navbar">
           <h1>Laiba's Portfolio</h1>
           {isMobile && (
-            <button 
+            <button
               className="nav-toggle"
               onClick={() => setIsNavOpen(!isNavOpen)}
             >
@@ -80,8 +86,8 @@ const Home = () => {
           <img className="profile-img" src={profileImg} alt="Laiba Saqlain" />
           <h1>Hi, I'm <em><strong>Laiba Saqlain</strong></em></h1>
           <h3>
-            <span className="highlight">Computer Science Student</span> | 
-            <span className="highlight"> Game Dev Enthusiast</span> | 
+            <span className="highlight">Computer Science Student</span> |
+            <span className="highlight"> Game Dev Enthusiast</span> |
             <span className="highlight"> UI/UX Designer</span>
           </h3>
           <a href="#contact">

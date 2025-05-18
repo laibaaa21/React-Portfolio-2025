@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { usePageTitle } from '../../context/PageTitleContext';
+import { useTheme } from '../../context/ThemeContext';
 import styles from './Skills.module.css';
 import { getAllSkills } from '../../services/skillsService';
 import useFetch from '../../hooks/useFetch';
@@ -7,6 +8,7 @@ import useFetch from '../../hooks/useFetch';
 const Skills = () => {
   const skillsRef = useRef(null);
   const { updatePageTitle } = usePageTitle();
+  const { theme } = useTheme(); // Get current theme
   const { data: apiSkills, loading, error } = useFetch(getAllSkills);
 
   const defaultSkills = [
@@ -46,6 +48,22 @@ const Skills = () => {
     };
   }, []);
 
+  // Force re-animation when theme changes
+  useEffect(() => {
+    const bars = document.querySelectorAll(`.${styles.bar}`);
+
+    // Remove animation class
+    bars.forEach(bar => bar.classList.remove(styles.animate));
+
+    // Force reflow
+    void skillsRef.current?.offsetWidth;
+
+    // Add animation class back
+    setTimeout(() => {
+      bars.forEach(bar => bar.classList.add(styles.animate));
+    }, 50);
+  }, [theme]);
+
   // Convert API skills to the format needed for display
   const skills = apiSkills && apiSkills.length > 0
     ? apiSkills.map(skill => ({
@@ -57,10 +75,10 @@ const Skills = () => {
     : defaultSkills;
 
   return (
-    <section id="skills" ref={skillsRef} className={styles.skillsSection}>
+    <section id="skills" ref={skillsRef} className={`${styles.skillsSection} ${theme}-theme`}>
       <h2 className={styles.heading}>Technical Skills</h2>
-      {loading && <p>Loading skills...</p>}
-      {error && <p>Error loading skills: {error}</p>}
+      {loading && <p className={styles.loading}>Loading skills...</p>}
+      {error && <p className={styles.error}>Error loading skills: {error}</p>}
       <div className={styles.container}>
         {skills.map((skill, index) => (
           <div key={index} className={styles.skillItem}>

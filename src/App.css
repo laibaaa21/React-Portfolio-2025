@@ -2,8 +2,40 @@
   text-align: center;
   background-color: var(--background-color);
   color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
   min-height: 100vh;
+}
+
+/* Global theme transitions for all elements */
+*,
+*::before,
+*::after {
+  transition: background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Specific transitions for common elements */
+a,
+button,
+input,
+textarea,
+select {
+  transition: all 0.3s ease;
+  color: var(--text-color);
+}
+
+/* Cards, sections, and containers */
+.card,
+section,
+div,
+nav,
+header,
+footer {
+  transition: background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .App-logo {
@@ -34,10 +66,23 @@
   transition: color 0.3s ease;
 }
 
+/* Dark theme specific adjustments */
+body.dark-theme {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Light theme specific adjustments */
+body.light-theme {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
