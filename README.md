@@ -1,6 +1,6 @@
 # Laiba's React Portfolio
 
-A modern, responsive portfolio website built with React, featuring a clean UI and a component-based architecture.
+A modern, full-stack portfolio website with a React frontend and Node.js/Express backend, featuring a clean UI, component-based architecture, and secure API endpoints.
 
 ## Features
 
@@ -9,43 +9,60 @@ A modern, responsive portfolio website built with React, featuring a clean UI an
 - **Component-Based Architecture**: Reusable components for maintainability
 - **Form Validation**: Contact form with detailed validation feedback
 - **Context API**: Dynamic page title updates
+- **REST API Integration**: Backend API for dynamic content
+- **JWT Authentication**: Secure admin access for content management
+- **MongoDB Database**: Persistent storage for all portfolio content
 
 ## Technologies Used
 
+### Frontend
 - React 18+
 - React Router DOM v6
 - CSS Modules
-- Intersection Observer API
+- Axios
 - Context API
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB with Mongoose
+- JSON Web Tokens (JWT)
+- express-validator
+- bcryptjs
 
 ## Project Structure
 
 ```
-src/
-├── assets/               # Images and static assets
-├── components/
-│   ├── common/           # Reusable components
-│   │   └── Card/         # Reusable card component with CSS module
-│   ├── Contact/          # Contact section with form validation
-│   ├── Education/        # Education section with custom table
-│   ├── Footer/           # Fixed footer component
-│   ├── Home/             # Main home page with sidebar and hero section
-│   ├── Projects/         # Projects showcase using Card components
-│   └── Skills/           # Skills section with animated progress bars
-├── context/
-│   └── PageTitleContext.js # Context for dynamic page titles
-├── pages/
-│   └── HomePage.jsx      # Main page structure with all sections
-└── App.js                # Root component with providers
+project/
+├── React-Portfolio-2025/   # Frontend React application
+│   ├── public/              # Static files and local JSON
+│   ├── src/
+│   │   ├── assets/          # Images and static assets
+│   │   ├── components/      # React components
+│   │   ├── context/         # Context providers
+│   │   ├── hooks/           # Custom React hooks
+│   │   ├── pages/           # Page components
+│   │   ├── services/        # API service modules
+│   │   └── App.js           # Root component
+│   └── package.json         # Frontend dependencies
+│
+└── server/                  # Backend API server
+    ├── controllers/         # Request handlers
+    ├── middleware/          # Auth and validation middleware
+    ├── models/              # Mongoose data models
+    ├── routes/              # API route definitions
+    ├── server.js            # Express app entry point
+    └── package.json         # Backend dependencies
 ```
 
 ## Installation and Setup
 
-1. Clone the repository:
+### Frontend
+
+1. Navigate to the frontend directory:
 
 ```bash
-git clone https://github.com/yourusername/react-portfolio.git
-cd react-portfolio
+cd React-Portfolio-2025
 ```
 
 2. Install dependencies:
@@ -60,54 +77,96 @@ npm install
 npm start
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+4. Open [http://localhost:5001](http://localhost:5001) to view it in your browser.
 
-## Key Components
+### Backend
 
-### Responsive Navigation and Sidebar
+1. Navigate to the backend directory:
 
-- Collapsible sidebar on mobile
-- Fixed navigation with smooth scrolling
+```bash
+cd server
+```
 
-![Desktop View](src/assets/1.jpg)
-![Mobile View](src/assets/2.jpg)
+2. Install dependencies:
 
-### Project Showcase
+```bash
+npm install
+```
 
-- Uses reusable Card component
-- Hover animations and image zoom effects
+3. Create a `.env` file with the following variables:
 
-![Card Hover effect](src/assets/3.gif)
+```
+MONGODB_URI=mongodb://localhost:27017/portfolio
+PORT=5000
+JWT_SECRET=your_secret_key
+```
 
-### Education Table
+4. Start the server:
 
-- Striped rows for better readability
-- Custom styling for different content types
-  ![Table](src/assets/4.jpg)
+```bash
+npm run dev
+```
 
-### Skills Visualization
+5. API will be available at [http://localhost:5000](http://localhost:5000)
 
-- Animated progress bars using CSS animations
-- Triggered by Intersection Observer for better performance
-  ![Skills bar](src/assets/5.gif)
+## Key Features
 
-### Contact Form
+### Frontend Components
 
-- Client-side validation with error messages
-- Success alerts
-  ![Form](src/assets/6.jpg)
+- **Responsive Navigation and Sidebar**
+  - Collapsible sidebar on mobile
+  - Fixed navigation with smooth scrolling
 
-### Footer
+  ![Desktop View](src/assets/1.jpg)
+  ![Mobile View](src/assets/2.jpg)
 
-- Footer with name
-- Appears when scrolled down
-  ![Footer](src/assets/7.jpg)
+- **Project Showcase**
+  - Uses reusable Card component
+  - Hover animations and image zoom effects
 
-### Light/Dark Mode
+  ![Card Hover effect](src/assets/3.gif)
 
-- toggles light/dark mode
-  ![Light Mode](src/assets/8.jpg)
-  ![Dark Mode](src/assets/9.jpg)
+- **Education Table**
+  - Striped rows for better readability
+  - Custom styling for different content types
+    ![Table](src/assets/4.jpg)
+
+- **Skills Visualization**
+  - Animated progress bars using CSS animations
+  - Triggered by Intersection Observer for better performance
+    ![Skills bar](src/assets/5.gif)
+
+- **Contact Form**
+  - Client-side validation with error messages
+  - Success alerts
+    ![Form](src/assets/6.jpg)
+
+- **Footer**
+  - Footer with name
+  - Appears when scrolled down
+    ![Footer](src/assets/7.jpg)
+
+- **Light/Dark Mode**
+  - toggles light/dark mode
+    ![Light Mode](src/assets/8.jpg)
+    ![Dark Mode](src/assets/9.jpg)
+
+### Backend API Features
+
+- **RESTful API**: Full CRUD operations for education, skills, projects, and experience
+- **JWT Authentication**: Secure endpoints for content management
+- **Role-Based Access**: Admin-only routes for content modifications
+- **Input Validation**: Request validation for all data inputs
+- **Error Handling**: Comprehensive error responses
+- **Local Data Fallback**: Graceful degradation when API is unavailable
+
+## Authentication
+
+The backend includes JWT-based authentication with:
+- User registration and login
+- Password hashing
+- Role-based authorization
+- Protected routes for admin operations
 
 ## Best Practices Implemented
 
@@ -116,7 +175,9 @@ npm start
 - **Functional Components**: Modern React patterns with hooks
 - **Responsive Design**: Mobile-first approach with media queries
 - **Component Reusability**: DRY principles with shared components
-- **Accessibility**: Semantic HTML elements and proper ARIA attributes
+- **API Service Layer**: Centralized API communication
+- **Environment Variables**: Separate configuration for development and production
+- **Input Validation**: Server-side validation for all data
 
 ## License
 
