@@ -22,6 +22,7 @@ const Home = () => {
     };
 
     window.addEventListener('resize', handleResize);
+    handleResize(); // Call on initial load
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
@@ -83,16 +84,21 @@ const Home = () => {
         </header>
 
         <div className="hero-section">
-          <img className="profile-img" src={profileImg} alt="Laiba Saqlain" />
-          <h1>Hi, I'm <em><strong>Laiba Saqlain</strong></em></h1>
-          <h3>
-            <span className="highlight">Computer Science Student</span> |
-            <span className="highlight"> Game Dev Enthusiast</span> |
-            <span className="highlight"> UI/UX Designer</span>
-          </h3>
-          <a href="#contact">
-            <button className="hire-button">HIRE ME</button>
-          </a>
+          <div className="hero-content">
+            <img className="profile-img" src={profileImg} alt="Laiba Saqlain" />
+            <div className="name-container">
+              <h1>Hi, I'm</h1>
+              <h1><em><strong>Laiba Saqlain</strong></em></h1>
+            </div>
+            <h3>
+              <span className="highlight">Computer Science Student</span> |
+              <span className="highlight">Game Dev Enthusiast</span> |
+              <span className="highlight">UI/UX Designer</span>
+            </h3>
+            <a href="#contact">
+              <button className="hire-button">HIRE ME</button>
+            </a>
+          </div>
         </div>
       </div>
     </div>
