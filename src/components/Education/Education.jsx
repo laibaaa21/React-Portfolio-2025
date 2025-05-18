@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { usePageTitle } from '../../context/PageTitleContext';
+import { useAuth } from '../../context/AuthContext';
 import styles from './Education.module.css';
 import { getAllEducation } from '../../services/educationService';
 import useFetch from '../../hooks/useFetch';
 
 const Education = () => {
   const { updatePageTitle } = usePageTitle();
+  const { isAuthenticated, isAdmin } = useAuth();
+  const navigate = useNavigate();
   const [retryCount, setRetryCount] = useState(0);
   const { data: education, loading, error, refetch } = useFetch(getAllEducation, [retryCount]);
 
@@ -23,6 +27,10 @@ const Education = () => {
     setRetryCount(prevCount => prevCount + 1);
   };
 
+  const handleManageEducation = () => {
+    navigate('/admin');
+  };
+
   const renderError = () => (
     <div className={styles.errorContainer}>
       <p className={styles.error}>
@@ -37,7 +45,19 @@ const Education = () => {
 
   return (
     <section id="education" className={styles.educationSection}>
-      <h2 className={styles.heading}>Education Background</h2>
+      <div className={styles.sectionHeader}>
+        <h2 className={styles.heading}>Education Background</h2>
+
+        {/* Admin Controls - Only visible when logged in as admin */}
+        {isAuthenticated && isAdmin() && (
+          <button
+            className={styles.adminButton}
+            onClick={handleManageEducation}
+          >
+            Manage Education
+          </button>
+        )}
+      </div>
 
       {loading && (
         <div className={styles.loadingContainer}>

@@ -1,0 +1,194 @@
+.adminEducation {
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.header h2 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.educationList {
+    width: 100%;
+}
+
+.error {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table th {
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.addButton {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.addButton:hover {
+    background-color: #2e4d2d;
+}
+
+.editButton {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.editButton:hover {
+    background-color: #1976d2;
+}
+
+.deleteButton {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.deleteButton:hover {
+    background-color: #d32f2f;
+}
+
+/* Form styles */
+.form {
+    background-color: var(--card-bg);
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+.form h3 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    color: var(--primary-color);
+}
+
+.formGroup {
+    margin-bottom: 16px;
+}
+
+.formRow {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.formRow .formGroup {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+.formGroup textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.formActions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.saveButton {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.saveButton:hover {
+    background-color: #2e4d2d;
+}
+
+.cancelButton {
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.cancelButton:hover {
+    background-color: #bdbdbd;
+}
+
+@media (max-width: 768px) {
+    .formRow {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .formRow .formGroup {
+        margin-bottom: 0;
+    }
+
+    .table {
+        display: block;
+        overflow-x: auto;
+    }
+}
